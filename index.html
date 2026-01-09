@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stratosphere AI - 미래형 전략 회의실</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // 수동 다크 모드 전환을 위해 class 모드 활성화
+        theme: {
+          extend: {
+            colors: {
+              // 너무 어두운 블랙 대신 세련된 다크 그레이/네이비 톤으로 변경
+              'cyber-black': '#0f172a', // Slate 900
+              'cyber-dark': '#1e293b',  // Slate 800
+              'cyber-blue': '#38bdf8',  // Sky 400 (조금 더 부드러운 톤)
+              'cyber-purple': '#c084fc', // Purple 400
+              'glass': 'rgba(255, 255, 255, 0.05)',
+              'paper': '#f8f9fa',
+              'card-light': '#ffffff',
+            },
+            fontFamily: {
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+              sans: ['Pretendard', 'ui-sans-serif', 'system-ui', '-apple-system', "Segoe UI", 'Roboto', "Helvetica Neue", 'Arial', "Noto Sans", 'sans-serif'],
+            },
+            animation: {
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              glow: {
+                '0%': { boxShadow: '0 0 5px #38bdf8, 0 0 10px #38bdf8' },
+                '100%': { boxShadow: '0 0 20px #38bdf8, 0 0 30px #38bdf8' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+      body {
+        font-family: 'Pretendard', sans-serif;
+      }
+      .glass-panel {
+        background: rgba(30, 41, 59, 0.7); /* Slate 800 + opacity */
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .light .glass-panel {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #475569; /* Slate 600 */
+        border-radius: 4px;
+      }
+      .light ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; /* Slate 300 */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
